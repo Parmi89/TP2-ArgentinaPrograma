@@ -9,8 +9,8 @@
   },
   { 
     "id": 2,
-    "nombre": "Gaseosa Pepsi", 
-    "detalle" : "Gaseosa de lata",
+    "nombre": "Pepsi", 
+    "detalle" : "Gaseosa en lata",
     "descripcion": "Bebida a base de azucares en envase chico de aluminio...", 
     "precio": 300,
     "img": "./img/lata.jpg"

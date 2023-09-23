@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const nombre = document.createElement("h2");
                 nombre.textContent = producto.nombre;
 
+                const detalle = document.createElement("p");
+                detalle.textContent = producto.detalle;
+
                 const precio = document.createElement("p");
                 precio.textContent = `Precio: $${producto.precio.toFixed(2)}`;
 
@@ -30,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 //MOSTRANDO ELEMENTOS EN HTML
                 productoDiv.appendChild(imagen);
                 productoDiv.appendChild(nombre);
+                productoDiv.appendChild(detalle);
                 productoDiv.appendChild(precio);
                 productoDiv.appendChild(detalleButton);
 
@@ -42,8 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para redirigir a detalles.html con información adicional en la URL
     function mostrarDetalle(producto, index) {
-        const queryString = `nombre=${encodeURIComponent(
+        const queryString = `id=${encodeURIComponent(
+            producto.id
+        )}&nombre=${encodeURIComponent(
             producto.nombre
+        )}&detalle=${encodeURIComponent(
+            producto.detalle
+        )}&descripcion=${encodeURIComponent(
+            producto.descripcion
         )}&precio=${encodeURIComponent(
             producto.precio
         )}&imagen=${encodeURIComponent(producto.img)}`;
