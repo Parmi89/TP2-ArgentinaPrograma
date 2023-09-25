@@ -1,6 +1,6 @@
 //Capturara el evento del click en comprar
 const verCarrito = document.getElementById("verCarrito");
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 document.addEventListener("DOMContentLoaded", () => {
     const productosContainer = document.getElementById("productos");
 
@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         img: producto.img,
                         precio: producto.precio,
                     });
+                    saveLocal();
                     console.log(carrito);
                 });
             });
@@ -80,41 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = `detalles.html?${queryString}`;
     }
 });
-//creando ventana modal
-verCarrito.addEventListener("click", () => {
-    modalContainer.innerHTML = "";
-    modalContainer.style.display = "flex";
-    const modalHeader = document.createElement("div");
-    modalHeader.className = "modal-header"
-    modalHeader.innerHTML = `
-    <h1 class="modal-header-title"> Productos seleccionados </h1>
-    `;
-    modalContainer.append(modalHeader);
-    const modalbutton = document.createElement("h1");
-    modalbutton.innerText = "X";
-    modalbutton.className = "modal-header-button";
-    //cerrar ventana modal
-    modalbutton.addEventListener("click",() => {
-        modalContainer.style.display = "none";
-    });
 
-    modalHeader.append(modalbutton);
-
-    carrito.forEach((product) => {
-        let carritoContent = document.createElement("div")
-        carritoContent.className = "modal-content";
-        carritoContent.innerHTML = `
-      <img src= "${product.img}">
-      <h1>${product.nombre} </h1> 
-      <h2>$ ${product.precio} </h2>
-      `;
-        modalContainer.append(carritoContent);
-    });
-    //"prod" representa cada producto
-    const total = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0);
-
-    const totalCompra = document.createElement("div");
-    totalCompra.className = "total-content";
-    totalCompra.innerHTML = `Total a pagar: $ ${total} `;
-    modalContainer.append(totalCompra);
-});
+//CREANDO LOCALSTORAGE PARA EL CARRITO
+const saveLocal = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+};

@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         detalleContainer.appendChild(detalleDescripcion);
         detalleContainer.appendChild(detallePrecio);
         detalleContainer.appendChild(botonRedireccionar);
+        
     } else {
         const mensajeError = document.createElement('p');
         mensajeError.textContent = 'No se encontraron detalles del producto.';
