@@ -1,0 +1,7 @@
+Se tiene en cuenta que falta mucho por agregar, como la seleccion de los productos mostrada en el icono del carrito.
+Que al utilizar una pantalla de menor tamaño el carro se muestre,
+Un navbar, un footer y botones mas acorde al diseño de los colores.
+Se utilizo fetch para traer los productos al index desde un archivo Json y se utilizo LocalStorage para almacenar los productos seleccionados a comprar, los mismos se podran visualizar desde el carrito por medio de una ventana modal.
+7o n
+Agradecido por su tiempo quedo a su disposicion por cualquier eventualidad y/o necesidad.
+Atte Parmigiani Edgar
