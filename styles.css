@@ -83,6 +83,13 @@ img {
   margin-top: 3.5vh;
   cursor: pointer;
 }
+.fa-solid {
+  text-align: center;
+  padding: 10px;
+  color: #15cc15; /* Color del icono */
+}
+
+
 /* VENTANA MODAL */
 .boton-cerrar{
   cursor: pointer;
@@ -150,4 +157,27 @@ img {
   font-size: 18px;
   padding: 10px 15px;
   cursor: pointer;
+}
+.footer {
+  background-color: #333; /* Color de fondo del footer */
+  color: #fff; /* Color del texto */
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icons {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+.icon:hover {
+  color: #007bff; /* Color al pasar el cursor sobre los iconos */
 }
