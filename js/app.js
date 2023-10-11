@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productosContainer = document.getElementById("productos");
 
     // Utilizar Fetch API para cargar el archivo productos.json
-    fetch("../Json/productos.json")
+    fetch("../json/productos.json")
         .then((response) => response.json())
         .then((data) => {
             // FORMATO DE LA/LAS CARDS
@@ -60,37 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log(carrito);
                 });
             });
-            // Función para manejar la calificación por estrella
-function handleRatingClick(event) {
-    const star = event.target;
-    const product = star.parentElement;
-    const productName = product.getAttribute('data-product');
-    
-    // Marcar la estrella activa
-    star.classList.add('active');
-
-    // Guardar la calificación en el Local Storage
-    localStorage.setItem(productName, '1');
-}
-
-// Asignar el evento click a la estrella
-const stars = document.querySelectorAll('.star');
-stars.forEach(star => {
-    star.addEventListener('click', handleRatingClick);
-});
-
-// Cargar calificación desde el Local Storage
-const product = document.querySelector('.product');
-const productName = product.getAttribute('data-product');
-const savedRating = localStorage.getItem(productName);
-if (savedRating === '1') {
-    product.querySelector('.star').classList.add('active');
-}
-
-        })
-        .catch((error) => {
-            console.error("Error al cargar los productos:", error);
-        });
 
     // Función para redirigir a detalles.html con información adicional en la URL
     function mostrarDetalle(producto, index) {
@@ -113,3 +82,4 @@ if (savedRating === '1') {
 const saveLocal = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
+});
