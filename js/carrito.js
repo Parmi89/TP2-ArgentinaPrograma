@@ -56,8 +56,8 @@ const eliminarProducto = () => {
 const foundId = carrito.find((element) => element.id);
 
 carrito = carrito.filter((carritoId) => {
-  return carritoId !== foundId;
+  return carritoId != foundId;
 });
-saveLocal();
+// saveLocal();
 pintarCarrito();
 };
