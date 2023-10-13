@@ -5,7 +5,8 @@
     "detalle" : "Gaseosa de 1lts",
     "descripcion": "Bebida a base de azucares...", 
     "precio": 500,
-    "img": "../img/Coca-Cola.jpg"
+    "cantidad": 1,
+    "img": "../img/coca-cola.jpg"
   },
   { 
     "id": 2,
@@ -13,6 +14,7 @@
     "detalle" : "Gaseosa en lata",
     "descripcion": "Bebida a base de azucares en envase chico de aluminio...", 
     "precio": 300,
+    "cantidad": 1,
     "img": "../img/lata.jpg"
   },
   { 
@@ -21,15 +23,17 @@
     "detalle" : "Bebida alcoholica",
     "descripcion": "Bebida de 750cm3 a base de hiervas con alcohol...", 
     "precio": 2000,
+    "cantidad": 1,
     "img": "../img/fernet.jpg"
   },
   { 
     "id": 4,
-    "nombre": "Hamburguesa", 
+    "nombre": "hamburguesa", 
     "detalle" : "Comida",
     "descripcion": "Comida a base de medallon de carne, pan...", 
     "precio": 1000,
-    "img": "../img/Hamburguesa.jpg"
+    "cantidad": 1,
+    "img": "../img/hamburguesa.jpg"
   },
   { 
     "id": 5,
@@ -37,37 +41,7 @@
     "detalle" : "Gaseosa naranja",
     "descripcion": "Gaseosa Fanta sabor naranja en su envase de 1.25lts de plastico...", 
     "precio": 1000,
+    "cantidad": 1,
     "img": "../img/fanta.jpg"
-  },{ 
-    "id": 1,
-    "nombre": "Coca-Cola", 
-    "detalle" : "Gaseosa de 1lts",
-    "descripcion": "Bebida a base de azucares...", 
-    "precio": 500,
-    "img": "../img/Coca-Cola.jpg"
-  },
-  { 
-    "id": 2,
-    "nombre": "Gaseosa Pepsi", 
-    "detalle" : "Gaseosa de lata",
-    "descripcion": "Bebida a base de azucares en envase chico de aluminio...", 
-    "precio": 300,
-    "img": "../img/lata.jpg"
-  },
-  { 
-    "id": 3,
-    "nombre": "Fernet Branca", 
-    "detalle" : "Bebida alcoholica",
-    "descripcion": "Bebida de 750cm3 a base de hiervas con alcohol...", 
-    "precio": 2000,
-    "img": "../img/fernet.jpg"
-  },
-  { 
-    "id": 4,
-    "nombre": "Hamburguesa", 
-    "detalle" : "Comida",
-    "descripcion": "Comida a base de medallon de carne, pan...", 
-    "precio": 1000,
-    "img": "../img/Hamburguesa.jpg"
-  } 
+  }
 ]

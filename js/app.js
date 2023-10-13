@@ -1,84 +1,66 @@
-//Capturara el evento del click en comprar
+const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-document.addEventListener("DOMContentLoaded", () => {
-	const productosContainer = document.getElementById("productos");
+const modalContainer = document.getElementById("modal-container");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 
-	// Utilizar Fetch API para cargar el archivo productos.json
-	fetch('../json/productos.json')
-		.then((response) => response.json())
-		.then((data) => {
-			// FORMATO DE LA/LAS CARDS
-			data.forEach((producto, index) => {
-				const productoDiv = document.createElement("div");
-				productoDiv.className = "card";
+//SIRVE PARA RECUPERAR LA INF GUARDADA EN EL LST
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [] ;
 
-				const nombre = document.createElement("h2");
-				nombre.textContent = producto.nombre;
+const getProducts = async () => {
+  const response = await fetch("../json/products.json")
+  const data = await response.json();
 
-				const detalle = document.createElement("p");
-				detalle.textContent = producto.detalle;
+  // FORMATO DE LA/LAS CARDS
+  data.forEach((product) => {
+    let content = document.createElement("div");
+    content.innerHTML = `
+      <img src = ${product.img}>
+      <h3>${product.nombre}</h3>
+      <p class="price">$${product.precio}</p>
+    `;
+  
+    shopContent.append(content);
+    //BOTON COMPRAR
+    let comprar = document.createElement("button");
+    comprar.innerText = "Comprar";
+    comprar.className = "boton-gris";
+  
+    content.append(comprar);
+  
+    //funcion comprar
+    comprar.addEventListener("click", () => {
+      //Verifica si el prod ya existe en los seleccionados
+      const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
+      
+      if(repeat) {
+        carrito.map((prod) => {
+            if(prod.id === product.id){
+                prod.cantidad++;
+            }
+        }); 
+    } else {
+        carrito.push({
+            id:product.id,
+            img: product.img,
+            nombre: product.nombre,
+            precio: product.precio,
+            cantidad: product.cantidad,
+        });
+        console.log(carrito);
+        console.log(carrito.length);
+        carritoCounter();
+        saveLocal();
+      }
+    });
+  });
+};
 
-				const precio = document.createElement("p");
-				precio.textContent = `Precio: $${producto.precio.toFixed(2)}`;
+getProducts();
 
-				const imagen = document.createElement("img");
-				imagen.src = producto.img;
-				imagen.alt = producto.nombre;
 
-				const detalleButton = document.createElement("button");
-				detalleButton.textContent = "Detalle";
-				detalleButton.className = "boton-verde";
-				detalleButton.addEventListener("click", () => {
-					mostrarDetalle(producto, index);
-				});
 
-				let comprar = document.createElement("button");
-				comprar.innerText = "Comprar";
-				comprar.className = "boton-gris";
 
-				//MOSTRANDO ELEMENTOS EN HTML
-				productoDiv.appendChild(imagen);
-				productoDiv.appendChild(nombre);
-				productoDiv.appendChild(detalle);
-				productoDiv.appendChild(precio);
-				productoDiv.appendChild(detalleButton);
-				productoDiv.appendChild(comprar);
-
-				productosContainer.appendChild(productoDiv);
-
-				//funcionalidad en boton COMPRAR
-				comprar.addEventListener("click", () => {
-					carrito.push({
-						id: producto.id,
-						nombre: producto.nombre,
-						detalle: producto.detalle,
-						img: producto.img,
-						precio: producto.precio,
-					});
-					saveLocal();
-					console.log(carrito);
-				});
-			});
-		});
-	// Función para redirigir a detalles.html con información adicional en la URL
-	function mostrarDetalle(producto, index) {
-		const queryString = `id=${encodeURIComponent(
-			producto.id
-		)}&nombre=${encodeURIComponent(
-			producto.nombre
-		)}&detalle=${encodeURIComponent(
-			producto.detalle
-		)}&descripcion=${encodeURIComponent(
-			producto.descripcion
-		)}&precio=${encodeURIComponent(
-			producto.precio
-		)}&imagen=${encodeURIComponent(producto.img)}`;
-		window.location.href = `detalles.html?${queryString}`;
-	}
-});
-
-//CREANDO LOCALSTORAGE PARA EL CARRITO
+//GUARDANDO LA SELECCION DEL CARRITO CON LOCALSTORAGE
 const saveLocal = () => {
-	localStorage.setItem("carrito", JSON.stringify(carrito));
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 };

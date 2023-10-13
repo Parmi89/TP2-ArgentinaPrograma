@@ -181,3 +181,11 @@ img {
 .icon:hover {
   color: #007bff; /* Color al pasar el cursor sobre los iconos */
 }
+
+.sumar{
+  cursor: pointer;
+}
+
+.restar{
+  cursor: pointer;
+}
