@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    const detalleContainer = document.getElementById('detalle');
+    const detalleContainer = document.getElementById('detalleButton');
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     
@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const detalleNombre = document.createElement('h1');
         detalleNombre.textContent = `${nombre}`;
 
-        const detalleDetalle = document.createElement('p');
-        detalleDetalle.textContent =`Detalle:${detalle}`;
+        const detalleDetalle = document.createElement('h5');
+        detalleDetalle.textContent = `${detalle}`;
 
-        const detalleDescripcion = document.createElement('p');
-        detalleDescripcion.textContent = `Descripcion: ${descripcion}`;
+        const detalleDescripcion = document.createElement('h5');
+        detalleDescripcion.textContent = `${descripcion}`;
 
         const detallePrecio = document.createElement('h4');
         detallePrecio.textContent = `Precio: $ ${precio}`;
@@ -38,11 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = "index.html";
         });
 
-        detalleContainer.appendChild(detalleImagen);
-        detalleContainer.appendChild(detalleId);  
-        detalleContainer.appendChild(detalleNombre);
-        detalleContainer.appendChild(detalleDetalle);
-        detalleContainer.appendChild(detalleDescripcion);
+        detalleContainer.append(detalleImagen);
+        detalleContainer.append(detalleId);  
+        detalleContainer.append(detalleNombre);
+        detalleContainer.append(detalleDetalle);
+        detalleContainer.append(detalleDescripcion);
         detalleContainer.appendChild(detallePrecio);
         detalleContainer.appendChild(botonRedireccionar);
         
@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = "index.html";
         });
         
-        detalleContainer.appendChild(mensajeError);
-        detalleContainer.appendChild(botonRedireccionar);
+        detalleContainer.append(mensajeError);
+        detalleContainer.append(botonRedireccionar);
         
     }
     

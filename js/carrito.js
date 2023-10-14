@@ -5,12 +5,12 @@ const pintarCarrito = () => {
   const modalHeader = document.createElement("div");
   modalHeader.className = "modal-header";
   modalHeader.innerHTML = `
-	<h1 class="modal-header-title">Carrito.</h1>
+	<h1 class="modal-header-title">Tus compras:</h1>
 	`;
   modalContainer.append(modalHeader);
   //Boton cerrar del modal
   const modalButton = document.createElement("h1");
-  modalButton.innerText = "Cerrar";
+  modalButton.innerText = "X";
   modalButton.className = "modal-header-button";
 
   modalButton.addEventListener("click", () => {
@@ -25,11 +25,11 @@ const pintarCarrito = () => {
     carritoContent.innerHTML = `
 	<img src = ${product.img}>
 	<h3>${product.nombre}</h3>
-	<p>$${product.precio}</p>
-  <span class= "restar"> - </span>
-  <p>Canti. ${product.cantidad}</p>
-  <span class= "sumar"> + </span>
-  <p> Total: ${product.cantidad * product.precio}</p>
+	<h5>$${product.precio}</h5>
+  <button class= "restar"> - </button>
+  <h5>Cant. ${product.cantidad}</h5>
+  <button class= "sumar"> + </button>
+  <h5> Total: ${product.cantidad * product.precio}</h5>
   <button class= "delete-product">Quitar</button>
 `;
     modalContainer.append(carritoContent);
