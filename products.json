@@ -6,7 +6,7 @@
     "descripcion": "Bebida a base de azucares...", 
     "precio": 500,
     "cantidad": 1,
-    "img": "../img/coca-cola.jpg"
+    "img": "img/coca-cola.jpg"
   },
   { 
     "id": 2,
@@ -15,7 +15,7 @@
     "descripcion": "Bebida a base de azucares en envase chico de aluminio...", 
     "precio": 300,
     "cantidad": 1,
-    "img": "../img/lata.jpg"
+    "img": "img/lata.jpg"
   },
   { 
     "id": 3,
@@ -24,7 +24,7 @@
     "descripcion": "Bebida de 750cm3 a base de hiervas con alcohol...", 
     "precio": 2000,
     "cantidad": 1,
-    "img": "../img/fernet.jpg"
+    "img": "img/fernet.jpg"
   },
   { 
     "id": 4,
@@ -33,7 +33,7 @@
     "descripcion": "Comida a base de medallon de carne, pan...", 
     "precio": 1000,
     "cantidad": 1,
-    "img": "../img/hamburguesa.jpg"
+    "img": "img/hamburguesa.jpg"
   },
   { 
     "id": 5,
@@ -42,7 +42,7 @@
     "descripcion": "Gaseosa Fanta sabor naranja en su envase de 1.25lts de plastico...", 
     "precio": 1000,
     "cantidad": 1,
-    "img": "../img/fanta.jpg"
+    "img": "img/fanta.jpg"
   },
   { 
     "id": 6,
@@ -51,7 +51,7 @@
     "descripcion": "Combo N° 1 para compartir llevate una gaseosa grande y un pancho y una hamburguesa para que vos y ...", 
     "precio": 2500,
     "cantidad": 1,
-    "img": "../img/combo.jpg"
+    "img": "img/combo.jpg"
   },
   { 
     "id": 7,
@@ -60,7 +60,7 @@
     "descripcion": "Combo N° 2 para compartir con quien quieras llevate un balde de pollo, otro de papas , una hamburguesa gigante y te inclumos los aderezos...", 
     "precio": 5000,
     "cantidad": 1,
-    "img": "../img/combo2.jpg"
+    "img": "img/combo2.jpg"
   },
   { 
     "id": 8,
@@ -69,6 +69,6 @@
     "descripcion": "Helado de un kilo para compartir con quien mas desee, con tres sabores a eleccion...", 
     "precio": 4500,
     "cantidad": 1,
-    "img": "../img/helado.jpeg"
+    "img": "img/helado.jpeg"
   }
 ]
