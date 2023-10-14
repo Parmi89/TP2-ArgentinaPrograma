@@ -7,12 +7,13 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const getProducts = async () => {
-  const response = await fetch('../json/products.json');
+  const response = await fetch('products.json');
   const data = await response.json();
 
   // FORMATO DE LA/LAS CARDS
   data.forEach((product) => {
     let content = document.createElement("div");
+    content.className = "card";
     content.innerHTML = `
       <img src = ${product.img}>
       <h2>${product.nombre}</h2>

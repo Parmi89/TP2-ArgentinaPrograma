@@ -43,5 +43,32 @@
     "precio": 1000,
     "cantidad": 1,
     "img": "../img/fanta.jpg"
+  },
+  { 
+    "id": 6,
+    "nombre": "Combo N° 1", 
+    "detalle" : "Comida",
+    "descripcion": "Combo N° 1 para compartir llevate una gaseosa grande y un pancho y una hamburguesa para que vos y ...", 
+    "precio": 2500,
+    "cantidad": 1,
+    "img": "../img/combo.jpg"
+  },
+  { 
+    "id": 7,
+    "nombre": "ombo N° 2", 
+    "detalle" : "Comida",
+    "descripcion": "Combo N° 2 para compartir con quien quieras llevate un balde de pollo, otro de papas , una hamburguesa gigante y te inclumos los aderezos...", 
+    "precio": 5000,
+    "cantidad": 1,
+    "img": "../img/combo2.jpg"
+  },
+  { 
+    "id": 8,
+    "nombre": "Helado", 
+    "detalle" : "Postre",
+    "descripcion": "Helado de un kilo para compartir con quien mas desee, con tres sabores a eleccion...", 
+    "precio": 4500,
+    "cantidad": 1,
+    "img": "../img/helado.jpeg"
   }
 ]
